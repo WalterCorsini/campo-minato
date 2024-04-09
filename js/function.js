@@ -4,3 +4,7 @@ function createElem(number){
     elem.innerHTML = number;
     return elem;
 }
+
+function checkCell(){
+    console.log(this.innerHTML);
+}
