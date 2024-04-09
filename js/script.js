@@ -2,16 +2,21 @@ const btnStart = document.getElementById("btn-start");
 const containerElem = document.querySelector(".grid-container");
 const cell = 100;
 const bomb = 16;
+let maxPoints = cell - bomb;
 let point = 0;
+
 
 btnStart.addEventListener("click",function(){
     const resultElem = document.getElementById("result-container");
+    const resultpoint = document.getElementById("result");
     containerElem.classList.remove("hidden");
     containerElem.innerHTML ="";
+    resultpoint.innerHTML="0";
+
     resultElem.classList.remove("hidden");
 
     // create cell
-    for(let i=1; i<=100; i++){
+    for(let i=1; i<=cell; i++){
         const currElem = containerElem.append(createElem(i));
     }
     // creat event listener for cell

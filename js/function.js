@@ -10,6 +10,7 @@ function createElem(number){
 function checkCell(){
     console.log(this.innerHTML);
     const currElem = parseInt(this.innerHTML);
+    
     if(bombElem.includes(currElem)){
         this.style.backgroundColor = "red";
         const cellElems = document.querySelectorAll(".cell");
@@ -19,19 +20,23 @@ function checkCell(){
         elem.style.pointerEvents="none";
         }
         endGame("Looser");
-    } else {
+    } else{
         this.style.pointerEvents="none";
         this.style.backgroundColor = "blue";
         point++;
         const resultElem = document.getElementById("result");
         resultElem.innerHTML = point;
+        if(point === maxPoints)
+        endGame("Winner");
         
     }
 }
 
 function endGame(text){
     if(text === "Looser"){
-        alert("hai perso");
+        alert("hai perso!!! hai totalizzato solamente "+ point + " punti" );
+    } else if (text === "Winner"){
+        alert("hai vinto!!!!!");
     }
 }
 
