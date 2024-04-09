@@ -20,13 +20,11 @@ function createElem(number) {
 
 // description controll Cell with bomb or Not
 function checkCell() {
-  console.log(this.innerHTML);
   const currElem = parseInt(this.innerHTML);
 
   if (bombElem.includes(currElem)) {
     this.style.backgroundColor = "red";
     const cellElems = document.querySelectorAll(".cell");
-    console.log(cellElems);
     for (let i = 0; i < cellElems.length; i++) {
       const elem = cellElems[i];
       elem.style.pointerEvents = "none";
@@ -60,18 +58,15 @@ function endGame(text) {
 /**
  * Description
  * @param {number} max  // max number random
- * @param {number} arraylength //  max number of bomb
  * @returns {object} // elemnt of bombArray
  */
-function createBomb() {
+function createBomb(max) {
   const resultArray = [];
-  while (resultArray.length < bomb) {
+  while (resultArray.length < max) {
     const rndNum = Math.floor(Math.random() * cell) + 1;
     if (!resultArray.includes(rndNum)) {
-      console.log(typeof resultArray);
       resultArray.push(rndNum);
     }
   }
-  console.log(resultArray ,"array bomb");
   return resultArray;
 }
