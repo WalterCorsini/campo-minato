@@ -7,7 +7,9 @@ let point = 0;
 btnStart.addEventListener("click",function(){
     const resultElem = document.getElementById("result-container");
     containerElem.classList.remove("hidden");
+    containerElem.innerHTML ="";
     resultElem.classList.remove("hidden");
+
     // create cell
     for(let i=1; i<=100; i++){
         const currElem = containerElem.append(createElem(i));

@@ -20,6 +20,7 @@ function checkCell(){
         }
         endGame("Looser");
     } else {
+        this.style.pointerEvents="none";
         this.style.backgroundColor = "blue";
         point++;
         const resultElem = document.getElementById("result");
