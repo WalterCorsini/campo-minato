@@ -4,8 +4,16 @@
  * @returns {object}  // element HTML
  */
 function createElem(number) {
+  
   const elem = document.createElement("div");
-  elem.classList.add("cell");
+  switch(difficult){
+    case "easy":
+        elem.classList.add("easy", "cell"); break;  
+    case "medium":
+        elem.classList.add("medium","cell"); break; 
+    case "hard":
+        elem.classList.add("hard","cell"); break;   
+  }
   elem.innerHTML = number;
   return elem;
 }
@@ -55,15 +63,15 @@ function endGame(text) {
  * @param {number} arraylength //  max number of bomb
  * @returns {object} // elemnt of bombArray
  */
-function createBomb(max, arraylength) {
+function createBomb() {
   const resultArray = [];
-  while (resultArray.length < arraylength) {
-    const rndNum = Math.floor(Math.random() * max) + 1;
+  while (resultArray.length < bomb) {
+    const rndNum = Math.floor(Math.random() * cell) + 1;
     if (!resultArray.includes(rndNum)) {
       console.log(typeof resultArray);
       resultArray.push(rndNum);
     }
   }
-  console.log(resultArray);
+  console.log(resultArray ,"array bomb");
   return resultArray;
 }

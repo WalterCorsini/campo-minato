@@ -43,7 +43,26 @@ button{
     background-color: lightblue;
 }
 
-.cell{
+
+.easy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 7);
+    aspect-ratio: 1;
+    border: 1px solid black;
+}
+
+.medium{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 9);
+    aspect-ratio: 1;
+    border: 1px solid black;
+}
+
+.hard{
     display: flex;
     align-items: center;
     justify-content: center;
