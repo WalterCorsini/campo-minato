@@ -4,15 +4,17 @@
  * @returns {object}  // element HTML
  */
 function createElem(number) {
-  
   const elem = document.createElement("div");
-  switch(difficult){
+  switch (difficult) {
     case "easy":
-        elem.classList.add("easy", "cell"); break;  
+      elem.classList.add("easy", "cell");
+      break;
     case "medium":
-        elem.classList.add("medium","cell"); break; 
+      elem.classList.add("medium", "cell");
+      break;
     case "hard":
-        elem.classList.add("hard","cell"); break;   
+      elem.classList.add("hard", "cell");
+      break;
   }
   elem.innerHTML = number;
   return elem;
@@ -36,7 +38,9 @@ function checkCell() {
     point++;
     const resultElem = document.getElementById("result");
     resultElem.innerHTML = point;
-    if (point === maxPoints) endGame("Winner");
+    if (point === maxPoints) {
+      endGame("Winner");
+    }
   }
 }
 
@@ -47,8 +51,7 @@ function checkCell() {
  */
 function endGame(text) {
   if (text === "Looser") {
-    alert(
-      "hai perso!!! hai totalizzato " + point + " punti");
+    alert("hai perso!!! hai totalizzato " + point + " punti");
   } else if (text === "Winner") {
     alert("hai vinto!!!!!");
   }

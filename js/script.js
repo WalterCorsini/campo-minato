@@ -23,8 +23,8 @@ btnStart.addEventListener("click", function () {
   point = 0;                                                        // RESET POINT
 // /reset game
 if(difficult == "easy"){                                            // VALUE CELL AND BOMB BASED OF DIFFICULT CHOICE
-  cell = 49;
-  bomb = 5;
+  cell = 3;
+  bomb = 0;
 } else if(difficult == "medium"){
   cell = 81;
   bomb = 10;
