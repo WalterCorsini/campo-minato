@@ -12,6 +12,13 @@ function checkCell(){
     const currElem = parseInt(this.innerHTML);
     if(bombElem.includes(currElem)){
         this.style.backgroundColor = "red";
+        const cellElems = document.querySelectorAll(".cell");
+        console.log(cellElems);
+        for(let i=0; i < cellElems.length; i++){
+	    const elem = cellElems[i];
+        elem.style.pointerEvents="none";
+        }
+        endGame("Looser");
     } else {
         this.style.backgroundColor = "blue";
         point++;
@@ -20,6 +27,13 @@ function checkCell(){
         
     }
 }
+
+function endGame(text){
+    if(text === "Looser"){
+        alert("hai perso");
+    }
+}
+
 
 // create random bomb under cell
 function createBomb(max,arraylength){
