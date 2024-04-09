@@ -1,9 +1,8 @@
 const btnStart = document.getElementById("btn-start");
 const containerElem = document.querySelector(".grid-container");
-const bombElem =[];
 const cell = 100;
 const bomb = 16;
-let point;
+let point = 0;
 
 // create cell
 for(let i=1; i<=100; i++){
@@ -17,4 +16,4 @@ for(let i=0; i<100; i++){
 }
 
 // create bomb
-createBomb(cell,bomb);
+const bombElem = createBomb(cell,bomb);

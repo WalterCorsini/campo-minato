@@ -9,8 +9,15 @@ function createElem(number){
 // description click event cell
 function checkCell(){
     console.log(this.innerHTML);
-    if(this.innerHTML.includes(bombElem)){
-        alert("bomb");
+    const currElem = parseInt(this.innerHTML);
+    if(bombElem.includes(currElem)){
+        this.style.backgroundColor = "red";
+    } else {
+        this.style.backgroundColor = "blue";
+        point++;
+        const resultElem = document.getElementById("result");
+        resultElem.innerHTML = point;
+        
     }
 }
 
